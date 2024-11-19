@@ -7,6 +7,9 @@ const products=require('./Router/products')
 const app=express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.get('/', (req, res) => {
+    res.send('Welcome to the home page!');
+});
 app.use('/user',userRouter)
 app.use('/products',products)
 
